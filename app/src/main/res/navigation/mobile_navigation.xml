@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navHome">
+
+    <fragment
+        android:id="@+id/navHome"
+        android:name="com.example.movieshub.ui.home.view.fragments.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navHome_to_navTVShows"
+            app:destination="@id/navTVShows" />
+        <action
+            android:id="@+id/action_navHome_to_navMovie"
+            app:popUpToInclusive="true"
+            app:destination="@id/navMovie" />
+    </fragment>
+    <fragment
+        android:id="@+id/navMovie"
+        android:name="com.example.movieshub.ui.movies.view.MoviesFragment"
+        android:label="@string/movies"
+        tools:layout="@layout/fragment_movies">
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="popular"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navTVShows"
+        android:name="com.example.movieshub.ui.tvshows.view.TvShowsFragment"
+        android:label="@string/tv_shows"
+        tools:layout="@layout/fragment_tv_shows">
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="popular"/>
+    </fragment>
+<!-- TODO: Navigation Bug When Communicating Fragments using Show All Button -->
+</navigation>

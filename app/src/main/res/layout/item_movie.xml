@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieshub.data.model.response.Movie" />
+
+        <import type="com.example.movieshub.util.Constants" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/ivMovieIcon"
+            app:imageUrl="@{movie.getBackdropPath}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:contentDescription="@string/movie_icon"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/tvMovieName"
+            app:layout_constraintDimensionRatio="w, 16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvMovieName"
+            style="@style/TextView.Medium.White"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}"
+            android:maxLines="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/ivMovieIcon"
+            app:layout_constraintStart_toStartOf="@id/ivMovieIcon"
+            app:layout_constraintTop_toBottomOf="@id/ivMovieIcon"
+            tools:text="@tools:sample/first_names" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.example.movieshub'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.movieshub"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+    buildFeatures {
+        dataBinding true
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", "AUTH_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjVkZjA4Y2YwNzA3MWZlYjJiNTk4MjNhNTk1NTI5ZSIsInN1YiI6IjY0YTZhOWNjMDdmYWEyMDExZTAzMjcxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WL4IeK7VnZ7nL7nIToSoF5vG0jxqeW1VQKFKZk3BIcE"')
+            buildConfigField("String", "BASE_IMAGE_PATH", '"https://image.tmdb.org/t/p/original"')
+            buildConfigField("String", "CATEGORY_URL", '"https://api.themoviedb.org/3/movie/14577"')
+        }
+        release {
+            buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", "AUTH_TOKEN", '"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjVkZjA4Y2YwNzA3MWZlYjJiNTk4MjNhNTk1NTI5ZSIsInN1YiI6IjY0YTZhOWNjMDdmYWEyMDExZTAzMjcxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WL4IeK7VnZ7nL7nIToSoF5vG0jxqeW1VQKFKZk3BIcE"')
+            buildConfigField("String", "BASE_IMAGE_PATH", '"https://image.tmdb.org/t/p/original"')
+            buildConfigField("String", "CATEGORY_URL", '"https://api.themoviedb.org/3/movie/14577"')
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+
+    // Splash Screen
+    implementation "androidx.core:core-splashscreen:1.0.1"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.1'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+}

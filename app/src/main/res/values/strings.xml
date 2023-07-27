@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MoviesHub</string>
+    <string name="tv_shows">Tv Shows</string>
+    <string name="movies">Movies</string>
+    <string name="home">Home</string>
+    <string name="movie_icon">Movie ICON</string>
+    <string name="case_profile_icon">Case Profile Icon</string>
+    <string name="peninsula">Peninsula</string>
+    <string name="_496_votes">496 votes</string>
+    <string name="ava">Ava</string>
+    <string name="popular">Popular</string>
+    <string name="show_all">Show all</string>
+    <string name="in_theatres">In Theatres</string>
+    <string name="_500_votes">500 Votes</string>
+    <string name="extraction">Extraction</string>
+    <string name="categories">Action,Comedy</string>
+    <string name="language">Language</string>
+    <string name="time">1:13/113min</string>
+    <string name="description">When a headstrong street orphan, Seiya, in search of his abducted sister unwittingly taps into hidden powers, he discovers he might be the only person alive who can protect a reincarnated goddess, sent to watch over humanity. Can he let his past go and embrace his destiny to become a Knight of the Zodiac?</string>
+    <string name="videos">VIDEOS</string>
+    <string name="cast">CAST</string>
+    <string name="dwayne_johnson">Dwayne Johnson</string>
+    <string name="_8_14_20">8/14/20</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="online">Online</string>
+    <string name="cast_image">cast Image</string>
+    <plurals name="votes">
+        <item quantity="one">%d Vote</item>
+        <item quantity="other">%d Votes</item>
+    </plurals>
+</resources>

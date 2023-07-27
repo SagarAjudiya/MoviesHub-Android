@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieshub.data.model.response.Movie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            app:imageUrl="@{movie.getPosterPath}"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:contentDescription="@string/movie_poster"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{movie.title}"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@id/rattingBar"
+            app:layout_constraintStart_toStartOf="@id/imgPoster" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rattingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            rattingFormat="@{movie.voteAverage}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:progressTint="@color/colorRed"
+            app:layout_constraintBottom_toBottomOf="@id/imgPoster"
+            app:layout_constraintStart_toStartOf="@id/txtvName" />
+
+        <TextView
+            android:id="@+id/txtVote"
+            textFromInt="@{movie.voteCount}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/rattingBar"
+            app:layout_constraintStart_toEndOf="@id/rattingBar"
+            app:layout_constraintTop_toTopOf="@id/rattingBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

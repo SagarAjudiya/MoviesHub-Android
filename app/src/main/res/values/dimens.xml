@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textNormal">14sp</dimen>
+    <dimen name="textMedium">16sp</dimen>
+    <dimen name="textTitle">20sp</dimen>
+    <dimen name="textSmall">10sp</dimen>
+    <dimen name="textLarge">36sp</dimen>
+    <dimen name="textSubTitle">12sp</dimen>
+    <dimen name="cornerSearch">12dp</dimen>
+    <dimen name="bottom_icon_size">32dp</dimen>
+</resources>

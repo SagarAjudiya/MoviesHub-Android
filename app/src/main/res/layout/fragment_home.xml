@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            tools:context=".ui.home.view.fragments.HomeFragment">
+
+            <TextView
+                android:id="@+id/txtvNoInternet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_internet_connection"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtvPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/popular"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/viewPager2"
+                app:layout_constraintTop_toBottomOf="@id/viewPager2" />
+
+            <TextView
+                android:id="@+id/txtvSeeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/show_all"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/txtvPopular"
+                app:layout_constraintEnd_toEndOf="@id/viewPager2"
+                app:layout_constraintTop_toTopOf="@id/txtvPopular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/txtvPopular"
+                app:layout_constraintTop_toBottomOf="@id/txtvPopular" />
+
+            <TextView
+                android:id="@+id/txtvTheatre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/in_theatres"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/rvPopular"
+                app:layout_constraintTop_toBottomOf="@id/rvPopular" />
+
+            <TextView
+                android:id="@+id/txtvSeeAllTheatre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/show_all"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/txtvTheatre"
+                app:layout_constraintEnd_toEndOf="@id/txtvSeeAll"
+                app:layout_constraintTop_toTopOf="@id/txtvTheatre" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTheatre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/rvPopular"
+                app:layout_constraintTop_toBottomOf="@id/txtvTheatre" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/viewGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="rvTheatre,viewPager2,txtvTheatre,rvPopular,txtvSeeAllTheatre,txtvSeeAll,txtvPopular" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

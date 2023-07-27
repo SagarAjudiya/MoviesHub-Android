@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movieshub.data.model.response.Movie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            app:imageUrl="@{movie.getPosterPath}"
+            android:contentDescription="@string/movie_poster"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="W,16:9"
+            app:layout_constraintBottom_toTopOf="@id/txtTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{movie.title}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/imgMovie"
+            app:layout_constraintStart_toStartOf="@+id/imgMovie"
+            app:layout_constraintTop_toBottomOf="@+id/imgMovie"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
